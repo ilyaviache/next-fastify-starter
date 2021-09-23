@@ -7,7 +7,7 @@ const { readFile } = promises
 export default class MainController {
 
   static async get(_request: FastifyRequest, reply: FastifyReply) {
-    const indexHtmlPath = resolve(__dirname, '../../../static/index.html')
+    const indexHtmlPath = resolve(__dirname, '../../static/index.html')
     const indexHtmlContent = await readFile(indexHtmlPath)
     reply
       .header('Content-Type', 'text/html charset=utf-8')

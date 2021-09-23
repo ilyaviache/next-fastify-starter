@@ -13,12 +13,23 @@
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "allowJs": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
   "exclude": [
-    "node_modules", "dist", ".next", "out", "next.config.js"
+    "node_modules",
+    "dist",
+    ".next",
+    "out",
+    "next.config.js"
   ],
   "include": [
-    "./server/**/*.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"
+    "./server/**/*.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }

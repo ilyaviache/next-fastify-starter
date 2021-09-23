@@ -1,13 +1,15 @@
 {
   "name": "fastify-typescript-starter",
-  "version": "4.1.0",
+  "version": "0.0.1",
   "description": "Fastify TypeScript starter repository",
   "scripts": {
-    "watch": "tsc --watch --preserveWatchOutput --pretty",
-    "dev": "cross-env NODE_ENV=development nodemon",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "build": "rimraf dist && tsc",
-    "start": "node dist/index.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "server:watch": "tsc --watch --preserveWatchOutput --pretty",
+    "server:dev": "cross-env NODE_ENV=development nodemon",
+    "server:build": "rimraf dist && tsc",
+    "server:start": "node dist/index.js"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -16,16 +18,24 @@
   "license": "MIT",
   "dependencies": {
     "@prisma/client": "^3.1.1",
+    "axios": "^0.21.4",
     "cross-env": "^7.0.3",
     "fastify": "^3.21.3",
     "fastify-cors": "^6.0.2",
     "fastify-env": "^2.1.1",
     "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.1",
-    "fluent-json-schema": "^3.0.1"
+    "fluent-json-schema": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "next": "^11.1.2",
+    "next-auth": "^3.29.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/node": "^16.9.6",
+    "@types/react": "^17.0.24",
     "fastify-tsconfig": "^1.0.1",
     "nodemon": "^2.0.12",
     "prettier": "^2.4.1",
