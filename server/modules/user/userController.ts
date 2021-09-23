@@ -1,17 +1,15 @@
 import { FastifyRequest, FastifyReply } from 'fastify'
+import { prisma } from '../../helpers/utils'
 
 export default class UserController {
   // GET /api/v1/user
-  static get(_request: FastifyRequest, reply: FastifyReply) {
-    reply.send({
-      env: process.env.TEST_ENV,
-      balance: '$3,277.32',
-      picture: 'http://placehold.it/32x32',
-      age: 30,
-      name: 'Leonor Cross',
-      gender: 'female',
-      company: 'GRONK',
-      email: 'leonorcross@gronk.com',
-    })
+  static async get(_request: FastifyRequest, reply: FastifyReply) {
+    try {
+      let users = await prisma.user.findMany()
+      return reply.send({ data: { users } })
+    } catch (error) {
+      console.error('users', error)
+      return reply.status(500).send({ error: `Cannot fetch users` })
+    }
   }
 }
