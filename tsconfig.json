@@ -16,9 +16,9 @@
     "baseUrl": "."
   },
   "exclude": [
-    "node_modules"
+    "node_modules", "dist", ".next", "out", "next.config.js"
   ],
   "include": [
-    "./server/**/*.ts"
+    "./server/**/*.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"
   ]
 }

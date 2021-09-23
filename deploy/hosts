@@ -1,0 +1,5 @@
+[prod]
+207.154.214.175 ansible_user=deploy
+
+[dev]
+207.154.214.175 ansible_user=deploy
